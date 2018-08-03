@@ -8,7 +8,7 @@ import base64
 import re
 
 import itertools
-from cStringIO import StringIO
+from io import StringIO
 
 from moesifapi.moesif_api_client import *
 from moesifapi.api_helper import *
