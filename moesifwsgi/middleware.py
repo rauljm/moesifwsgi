@@ -63,7 +63,7 @@ class MoesifMiddleware(object):
     """WSGI Middleware for recording of request-response"""
     def __init__(self, app, settings):
         self.app = app
-        self.request_counter = itertools.count().next # Threadsafe counter
+        self.request_counter = next(itertools.count()) # Threadsafe counter
         self.ipv4 = r"^(?:(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])\.){3}(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])$"
         self.ipv6 = r"^((?=.*::)(?!.*::.+::)(::)?([\dA-F]{1,4}:(:|\b)|){5}|([\dA-F]{1,4}:){6})((([\dA-F]{1,4}((?!\3)::|:\b|$))|(?!\2\3)){2}|(((2[0-4]|1\d|[1-9])?\d|25[0-5])\.?\b){4})$/i"
 
